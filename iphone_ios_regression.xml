@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S5044</id>
+	<name>iPhone iOS Regression</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>Hotels</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel search</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel calendar search</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C643314</id>
+				<title>Tap on calendar field &gt; Verify calendar appears and functions</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Open hotel search form</preconds>
+										<steps_separated><step>
+<index>1</index><content>I tap on the calendar field</content><expected>Calendar animates up from the bottom</expected></step>
+<step>
+<index>2</index><content>I tap on the chevron in the calendar header</content><expected>Chevrons advances/reverses months displayed</expected></step>
+<step>
+<index>3</index><content>I tap on a date on the calendar</content><expected>It highlights that date and shows a callout including the date and helpful text</expected></step>
+<step>
+<index>4</index><content>I tap on a second date on the calendar</content><expected>Both dates are now highlighted </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C643315</id>
+				<title>Select one date &gt; Verify the search button is enabled</title>
+												<type>Automated</type>
+																<priority>1 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select one date</content><expected>Search is tappable
+Guest is set to one
+Checkout day defaults to one day after check-in date</expected></step>
+<step>
+<index>2</index><content>Tap Search</content><expected>Search result screen displays search results for this selected date range and guest configuration</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C643316</id>
+				<title>Select hotel stay longer than 28 days &gt; Verify user is prompted with error message</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select hotel stay longer than 28 days</content><expected>Verify user is prompted with error message pop up: Title: &quot;Search Error&quot;
+Text: &quot;We are sorry, but we are unable to search for hotel stays longer than 28 days&quot;
+The button on the pop up is &quot;OK&quot;
+ </expected></step>
+<step>
+<index>2</index><content>I tap OK on the error message</content><expected>I return to the search form</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C646523</id>
+				<title>Calendar chevrons should be visible</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on calendar chevrons (try different devices and iOS version) </content><expected>Calendar month and chevrons should be visible (should not turn yellow)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C646524</id>
+				<title>User should not be able to select a date in the past</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI should be open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Try to select a date in the past</content><expected>The dates in the past should be disabled</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C646525</id>
+				<title>Change the dates on the calendar &gt; Verify date range updates in search field</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI should be open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select a range of dates</content><expected>The range should be reflected in search field</expected></step>
+<step>
+<index>2</index><content>Select a different range of dates</content><expected>The new date range updates in search field accordingly</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hotel guest picker search</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C646532</id>
+				<title>Tap on Guest icon -&gt; Verify guest picker UI opens and functions</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>hotel search form is open.</preconds>
+										<steps_separated><step>
+<index>1</index><content>I tap on the guest icon</content><expected>The Guest picker UI animates up from the bottom.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hotel search result screen</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel sort</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel filter</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel search result cell</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel search result map mode</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotel details</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel gallery</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details messaging</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details link to reviews</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details short description</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details map</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details amenity icons</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel details long description</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotel room and rates</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel room cells</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotel overview/checkout</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel overview thumbnail</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel overview room type</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel overview bed type</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel overview value adds</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel overview summary cell</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel overview total cost breakdown</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel checkout login button</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel checkout guest details</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel guest details traveler info screen</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotel checkout payment details</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel checkout payment details payment info screen</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotels checkout rules and regulations</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel checkout slide to purchase</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel checkout CVV screen</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotels confirmation screen</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel review screen</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel booking flows</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hotel ETP flows</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+	</sections>
+</suite>
