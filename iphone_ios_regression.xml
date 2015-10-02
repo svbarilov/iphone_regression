@@ -140,8 +140,8 @@ The button on the pop up is &quot;OK&quot;
 									
 						<case>
 				<id>C646532</id>
-				<title>Tap on Guest icon -&gt; Verify guest picker UI opens and functions</title>
-												<type>Automated</type>
+				<title>Tap on guest icon &gt; Verify guest picker UI opens and functions</title>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
 				<estimate>120</estimate>
@@ -153,26 +153,624 @@ The button on the pop up is &quot;OK&quot;
 </steps_separated>
 									</custom>
 							</case>
+												
+						<case>
+				<id>C649639</id>
+				<title>Tap on guest picker &gt; Add adults &gt; Verify max number of adults is 6</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open
+User taps on guest picker icon</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;+&quot; button 5 times to add six adults</content><expected>The &quot;+&quot; button should be disabled 
+User shouldn&apos;t be able to add more than 6 adults
+Guest picker icon counter updates to 6
+Search button is enabled</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C649640</id>
+				<title>Tap on guest picker &gt; Verify min number of adults is 1</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open
+User taps on guest picker icon</preconds>
+										<expected>The &quot;-&quot; button should be disabled when you have one adult selected
+Search button is enabled
+Guest picker icon counter shows 1</expected>
+										<steps_separated><step>
+<index>1</index><content></content><expected></expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C649641</id>
+				<title>Tap on guest picker &gt; Add children &gt; Verify max number of children is 4</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open
+User taps on guest picker icon
+Number of adults should be defaulted to one</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;+&quot; button 4 times to child selector</content><expected>Maximum 4 number of children can be added and Age picker field for all 4 children is displayed.
+Make sure Search button is not enabled until all children age is selected.
+Make sure minimum 1 adult is present.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C649642</id>
+				<title>Tap on guest picker &gt; Add child &gt; Verify age must be selected for each child</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open
+User taps on guest picker icon</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;+&quot; to add one child </content><expected>Verify &quot;select age&quot; button appears 
+Search button is disabled while the age is not selected</expected></step>
+<step>
+<index>2</index><content>Tap on &quot;Select age Child one&quot; button</content><expected>Child age picker shows up
+User should be able to select the age for child</expected></step>
+<step>
+<index>3</index><content>Tap &quot;Done&quot; button&quot;</content><expected>Childs age button appears and reflects selected age
+Search button becomes enabled
+Guest picker icon counter updates to 2</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C649643</id>
+				<title>Tap on guest picker &gt; Verify child&apos;s age ranges from &quot;Less than 1&quot; to &quot;17 years old&quot;</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C649644</id>
+				<title>Tap on guest picker &gt; Add 3 adults + 3 Children &gt; Verify max number of hotel guests is 6</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open
+User taps on guest picker icon</preconds>
+										<steps_separated><step>
+<index>1</index><content>Verify that maximum number of users can not exceed 6 with any combination of adults and children.</content><expected>Make Sure User can 
+
+1. Select 1 adult + 4 children
+2. Select 2 adult + 4 Children
+3. Select 3 Adult + 3 children
+4. Select 4 adult + 2 children</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 								</cases>
 							</section>
 			<section>
 		<name>Hotel search result screen</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C655095</id>
+				<title>Hotel search results list screen &gt; Verify all screen elements appear in navbar, list, footer</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has tapped the Hotels LOB button from the launcher screen and completed a hotel search.</preconds>
+										<steps>1. User is defaulted to list mode</steps>
+										<expected>1. Navbar contains from left to right: 
+  Expedia icon to back out to launcher
+  Name of the destination the user searched in the center top line
+  Calendar icon, date range the user searched for, guest icon and the number of guests the user searched for
+  Magnifying glass search icon at right
+2. Search result cells are displayed under the header
+3. Footer contains from left to right:
+  Map button 
+  POS pricing display approach text &quot;Prices on average, per night&quot; or &quot;Total price for stay&quot;
+  Sort button </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655102</id>
+				<title>Hotel search results list screen &gt; Verify 1st, 52nd, and 53rd hotels in list are sponsored listings regardless of what sort is used</title>
+												<type>Manual</type>
+																<priority>1 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has tapped the Hotels LOB button from the launcher screen and completed a hotel search.
+</preconds>
+										<steps>1. The list of hotels appears
+2. The user scrolls down to the 52nd and 53rd cells in the list
+3. The user changes the default sort of the list</steps>
+										<expected>1. The first hotel cell in the list contains the text &quot;Sponsored&quot; in the bottom right corner
+2. The 52nd and 53rd cells in the list contain the text &quot;Sponsored&quot; in the bottom right corner
+3. The sponsored listings remain in the same 1st, 52nd, 53rd spots no matter what sort is applied.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655104</id>
+				<title>Hotel search results list screen &gt; Verify pricing display is correct for &apos;average per night&apos; POS</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>1200</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is set to one of the following POS (US, Canada, Japan, Mexico, Brazil, Argentina, Hong Kong, Indonesia, Korea, Malaysia, Philippines, Thailand, Taiwan, Vietnam, Singapore) and has tapped the Hotels LOB button from the launcher screen and completed a hotel search for a one night or a multi-night stay.</preconds>
+										<steps>1. User is defaulted to list mode</steps>
+										<expected>2. Footer text displays &quot;Prices average, per night&quot;</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655105</id>
+				<title>Hotel search results list screen &gt; Verify pricing display is correct for &apos;total per stay&apos; POS</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>1200</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is set to one of the following POS (Austria, Belgium, Germany, Denmark, Spain, France, UK, Italy, Netherlands, Sweden, New Zealand, Australia) and has tapped the Hotels LOB button from the launcher screen and completed a hotel search for a one night or a multi-night stay.</preconds>
+										<steps>1. User is defaulted to list mode
+</steps>
+										<expected>1. Footer text displays &quot;Total price for stay&quot;</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655107</id>
+				<title>Hotel search results list screen &gt; Verify Filters menu is hidden under navbar until user scrolls up to access it</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has tapped the Hotels LOB button from the launcher screen and completed a hotel search.
+</preconds>
+										<steps>1. User is defaulted to list mode
+2. User scrolls the list up
+3. User performs new search</steps>
+										<expected>1. The filter is not visible in the default search results
+2. Filter is now visible as the top row under the navbar and over the hotel cells
+3. Filter is still visible</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel sort</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C650702</id>
+				<title>Hotel results page &gt; Tap on Sort Button &gt; Verify Sort By Popular</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for cities &quot;San Francisco&quot;, &quot;Chicago&quot;, &quot;Las vegas&quot;, &quot;New York&quot;, &quot;los angeles&quot; for future dates with default travelers.
+User goes to Hotel Results page.</preconds>
+										<steps_separated><step>
+<index>1</index><content>tap on Sort button.</content><expected>User gets Sort overlay with different Sort options.
+Sort By Popular should be selected by default.
+
+It will show Sort by popular for only above mentioned cities in precondition.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C650703</id>
+				<title>Hotel results page &gt; Tap on Sort Button &gt;Verify Sort By price</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results page.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on Sort button.</content><expected>User gets Sort overlay with different Sort options.
+</expected></step>
+<step>
+<index>2</index><content>Select Sort By Price option</content><expected>Verify that the hotels are sorted by price in ascending order.
+Sponsored hotels will not be part of sort.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C650704</id>
+				<title>Hotel results page &gt; Tap on Sort Button &gt;Verify Sort By Discount</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results page.
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on Sort button.</content><expected>User gets Sort overlay with different Sort options.</expected></step>
+<step>
+<index>2</index><content>Select Sort By Discount option</content><expected>Verify that all discounted hotels should show up on the top.
+FYI: they are not sorted by discount percentage.
+Sponsored hotels will not be part of sort.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C650705</id>
+				<title>Hotel results page &gt; Tap on Sort Button &gt;Verify Sort By Rating</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results page.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on Sort button.</content><expected>User gets Sort overlay with different Sort options.</expected></step>
+<step>
+<index>2</index><content>Select Sort By Ratings option</content><expected>Verify that the hotels are sorted by Ratings in descending order.
+Ratings number/Bar should appear in descending order.
+Sponsored hotels will not be part of sort.
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C650706</id>
+				<title>Hotel results page &gt; Tap on Sort Button &gt;Verify Sort By Distance</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in Current location, POI (Statue of Liberty), Specific address, Airport code for future date and default number of travelers.
+User should be on hotel results page.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on Sort button.</content><expected>User gets Sort overlay with different Sort options.
+For current location search Sort By Distance will be selected by default.
+For other cases when user selects Sort by distance hotels should be sorted by nearest to furthest.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel filter</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C651720</id>
+				<title>Hotel result page&gt; Swipe down &gt; Verify filter bar appears</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button
+&quot;Hotel Name&quot; placeholder should appear in the input field
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651788</id>
+				<title>Hotel result page&gt; Swipe down &gt; Verify filter by Hotel Name functionality</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now Type any hotel name that is present on the hotel results page.</content><expected>Hotel results should get filtered and only hotels with entered text or name should show up on the results page. </expected></step>
+<step>
+<index>3</index><content>Now try to type random text &quot;snkfhif9&quot;</content><expected>And no results found message should show up.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651789</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify Hotel Filters screen appears</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button. </content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651790</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify user can filter by Price</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the different Filter options in Price.
+For $ Filter -&gt; Only Cheap hotels should show up
+For $$ filter -&gt; Only medium price range hotels should show up.
+For $$$ filter -&gt; Only expensive hotels should show up.</content><expected>User should see updated results and verify the filter is applied properly by checking the prices on hotel results page.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651791</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify user can filter by Distance</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in Current Location for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the different Filter options in filter by Distance.</content><expected>User should see updated results and verify the filter is applied properly by checking the distance for hotels on hotel results page.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651792</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify user can filter by Ratings</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the different Filter options in filter by ratings section.</content><expected>User should see updated results and verify the filter is applied properly to the hotel results by checking the ratings on hotel results page.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651793</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify user can filter by VIP Access</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the Vip access filter</content><expected>Verify the hotel results page shows hotels with Vip access only and they have a Vip access button on the gallery image.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651794</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify user can filter by mixing all filter options</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the different Filter combinations.
+Price + Ratings + distance + Vip 
+Price + Ratings + distance
+Ratings + distance + Vip 
+Price + Ratings
+distance + Vip </content><expected>Verify that the hotel results gets filtered with every combination and correctly.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651795</id>
+				<title>Hotel result page&gt; Swipe down &gt; Tap on Filters Button &gt; Verify &quot;No Matching Hotels&quot; message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap on the Filter button.</content><expected>verify Hotel Filters screen appears with filter by price, distance, ratings and VIP access options are present.</expected></step>
+<step>
+<index>3</index><content>Now try to use the different Filter combinations.
+Use Vip Access filter + $ price .</content><expected>&quot;No Matching Hotel&quot; message shows up. And tapping on done and going to the Hotel results page shows &quot;Sorry, no hotels match your current filter.&quot; error message.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651796</id>
+				<title>Hotel result page&gt; Swipe down &gt; Type Hotel name that does not exist &gt; Verify no hotel match message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now tap inside &quot;Hotel name&quot; Filter bar.
+And type random characters &quot;jkh894n&quot; or type a hotel name which is not present in the list.</content><expected> &quot;Sorry, no hotels match your current filter.&quot; message should show up on hotel results page.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C651797</id>
+				<title>Hotel result page&gt; Swipe down &gt; Type Hotel name &gt; Refresh search &gt; Verify that all filter options go to default values</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel search result cell</name>
 		<description></description>
 									</section>
 			<section>
 		<name>Hotel search result map mode</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel MRU list</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C655378</id>
+				<title>Hotel MRU list &gt; Verify &quot;Current Location&quot; is at the top of the MRU list every time</title>
+												<type>Manual</type>
+																<priority>1 - Must Test</priority>
+												
+				<estimate>120</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has entered the Hotels LOB and the search form has opened.
+User has allowed Expedia Bookings location services.</preconds>
+										<steps>1. Clear private data or do a fresh install and launch and enter the Hotels LOB
+2. Perform multiple searches</steps>
+										<expected>1. Search form opens with the MRU list only containing &quot;Current Location&quot; (MRU list is underneath the date field)
+2. &quot;Current Location&quot; always appears at the top of the MRU list</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655379</id>
+				<title>Hotel MRU list &gt; Verify reverse geocoded location appears in the MRU list as the second entry under &quot;Current Location&quot;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has entered the Hotels LOB and the search form has opened.
+User has allowed Expedia Bookings location services</preconds>
+										<steps>1. </steps>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hotel search field</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel search errors</name>
 		<description></description>
 									</section>
 	</sections>
@@ -184,7 +782,92 @@ The button on the pop up is &quot;OK&quot;
 		<section>
 		<name>Hotel gallery</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C655096</id>
+				<title>Hotel details page &gt; Verify user can navigate via gallery by swiping left/right</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results
+User should be on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>swipe right to left</content><expected>next image should load
+observe default image while server image is still loading</expected></step>
+<step>
+<index>2</index><content>swipe left to right</content><expected>previous image should load
+observe default image while server image is still loading</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655097</id>
+				<title>Hotel details page &gt; Verify default template image</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for &quot;Visak Hotel, Kiev, UA&quot; future date and default number of travelers
+User should land on  hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>swipe right to left/left to right</content><expected>default template image should appear
+swipe gesture should be disabled </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655100</id>
+				<title>Hotel details page &gt; Tap on image gallery &gt; Verify that gallery transition to full screen mode</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results
+User should be on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>tap on gallery image</content><expected>Gallery should expand into full screen mode</expected></step>
+<step>
+<index>2</index><content>tap on gallery image again</content><expected>Gallery should collapse into details screen mode</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655103</id>
+				<title>Hotel details page &gt; Swipe Up/Down on image gallery &gt; Verify that gallery expands/collapses</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results
+User should be on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>swipe down gallery image</content><expected>Gallery should expand into full screen mode</expected></step>
+<step>
+<index>2</index><content>swipe right/left</content><expected>verify images transition in full screen mode </expected></step>
+<step>
+<index>3</index><content>swipe up gallery image</content><expected>Gallery should collapse into details screen mode</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details messaging</name>
 		<description></description>
@@ -285,6 +968,241 @@ The button on the pop up is &quot;OK&quot;
 		<name>Hotel checkout CVV screen</name>
 		<description></description>
 									</section>
+			<section>
+		<name>Hotel Credit Card Error Handling</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C652377</id>
+				<title>Select random Hotel &gt; Enter Carte Blanche &gt; Verify Carte Blanche error message</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap Payment details</content><expected>Payment details screen appears</expected></step>
+<step>
+<index>3</index><content>Enter &quot;9500 0000 0000 0000&quot; as a credit card number</content><expected>&quot;This hotel does not accept Carte Blanche.&quot; error message appear 
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652379</id>
+				<title>Select random Hotel &gt; Checkout with Fake Credit Card &gt; Verify checkout error message</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Enter default/random guest details and click next</content><expected>Next button should be grayed out if some info is missing
+After tapping next Payment details screen slides from the right</expected></step>
+<step>
+<index>4</index><content>Enter Fake credit card number: &quot;4123 4567 8901 2372&quot;
+and other valid info:
+exp date = 08/18
+zip code = 94114
+
+Tap &quot;Done button&quot;</content><expected>User is taken back to checkout screen with &quot;Slide to purchase&quot; slider on the bottom of the screen</expected></step>
+<step>
+<index>5</index><content>Slide the purchase bar from left to right</content><expected>User should be prompted to enter CVV code</expected></step>
+<step>
+<index>6</index><content>Enter CVV code as 737 and tap &quot;Done&quot; button</content><expected>User is prompted with error message: &quot;We’re sorry, but we were unable to process your payment. Please verify that you entered your information correctly.&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652380</id>
+				<title>Select random Hotel &gt; Checkout with Invalid Credit Card &gt; Verify Expedia warning sign</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Enter default/random guest details and click next</content><expected>Next button should be grayed out if some info is missing
+After tapping next Payment details screen slides from the right</expected></step>
+<step>
+<index>4</index><content>Enter Invalid credit card number: &quot;4999 9999 9999 9999&quot;
+and other valid info:
+exp date = 08/18
+zip code = 94114
+
+Tap &quot;Done button&quot;</content><expected>User is prompted with Expedia warning sign</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652381</id>
+				<title>Select random Hotel &gt; Checkout with 14 digit Visa card&gt; Verify Expedia warning sign</title>
+												<type>Automated</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Enter default/random guest details and click next</content><expected>Next button should be grayed out if some info is missing
+After tapping next Payment details screen slides from the right</expected></step>
+<step>
+<index>4</index><content>Enter 14 digit Visa credit card number: &quot;4111 1111 1111 11&quot;
+and other valid info:
+exp date = 08/18
+zip code = 94114
+
+Tap &quot;Done button&quot;</content><expected>User is prompted with Expedia warning sign</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652382</id>
+				<title>Select random Hotel &gt; Checkout with bad CVV code&gt; Verify Checkout error message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen
+Price of the hotel need to be more than $200.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Enter default/random guest details and click next</content><expected>Next button should be grayed out if some info is missing
+After tapping next Payment details screen slides from the right</expected></step>
+<step>
+<index>4</index><content>Enter Valid credit card number: &quot;4444 4444 4444 4448&quot;
+and other valid info:
+exp date = 08/18
+zip code = 94114
+
+Tap &quot;Done button&quot;</content><expected>User is taken back to checkout screen with &quot;Slide to purchase&quot; slider on the bottom of the screen</expected></step>
+<step>
+<index>5</index><content>Slide the purchase bar from left to right</content><expected>User should be prompted to enter CVV code</expected></step>
+<step>
+<index>6</index><content>Enter BAD CVV code as 000 and tap &quot;Done&quot; button</content><expected>User is prompted with error message: &quot;We’re sorry, but we were unable to process your payment. Please verify that you entered your information correctly.&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hotel checkout error handling</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C655098</id>
+				<title>Select random Hotel &gt; Checkout with invalid guest info &gt; Verify error message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>420</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>a. Leave first name field blank (entering valid info in all other fields)
+b. Enter only one character (entering valid info in all other fields)</content><expected>Next button should be disabled</expected></step>
+<step>
+<index>4</index><content>Leave last name field blank (entering valid info in all other fields)</content><expected>Next button should be disabled</expected></step>
+<step>
+<index>5</index><content>a. Leave phone number field blank (entering valid info in all other fields)
+b. Enter invalid phone number (abd;:;)</content><expected>Next button should be disabled</expected></step>
+<step>
+<index>6</index><content>1.Leave e-mail filed blank (entering valid info in all other fields)
+2. Wrong email format.</content><expected>Next button should be disabled</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655099</id>
+				<title>Select random Hotel &gt; Checkout with invalid payment info &gt; Verify error message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Payment details&quot; button</content><expected>Payment details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Try setting Credit Card expiration date to the date from the past</content><expected>User shouldn&apos;t be able to select past date as Credit Card expiration date</expected></step>
+<step>
+<index>4</index><content>Try entering Credit Card number that is too short:
+4111 1111 1111</content><expected>Done button should be disabled</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C655101</id>
+				<title>Select random Hotel &gt; Checkout with invalid guest e-mail &gt; Verify error pop-up</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has selected a hotel and room and is now on Checkout Screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Checkout button</content><expected>The screen scroll down to Guest details and Payment details</expected></step>
+<step>
+<index>2</index><content>Tap &quot;Guest details&quot; button</content><expected>Guest details screen slides from the right</expected></step>
+<step>
+<index>3</index><content>Enter e-mail that doesn&apos;t match e-mail pattern:
+a. abc@abc,com
+b. abc @abc.com
+c. aaa
+d. &lt;email&gt;</content><expected>user should see alert message with &quot;Please enter a valid e-mail address.&quot; text
+Tapping &quot;OK&quot; on the alert should take user back to &quot;Guest info&quot; screen</expected></step>
+<step>
+<index>4</index><content></content><expected></expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -303,8 +1221,671 @@ The button on the pop up is &quot;OK&quot;
 		<name>Hotel ETP flows</name>
 		<description></description>
 									</section>
+			<section>
+		<name>Hotel Map Search</name>
+		<description>User switches from list mode to map mode in Search Results list, performs a new search and accesses details-&gt;checkout</description>
+									</section>
+			<section>
+		<name>Hotel Search from Car confirmation page - hotel attach</name>
+		<description>(non-US POS have hotel attach instead of air attach)</description>
+									</section>
+			<section>
+		<name>Hotel search from Flight confirmation page - hotel attach</name>
+		<description>(non-US POS have hotel attach instead of air attach)</description>
+									</section>
+			<section>
+		<name>Hotel search from Air Attach banner on confirmation page</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel search from Air Attach banner on Itinerary screen</name>
+		<description></description>
+									</section>
 	</sections>
 			</section>
+			<section>
+		<name>Hotel A/B tests</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hotel Loyalty members</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C652364</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; TW POS</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Select Taiwan (TW) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123 
+Must be tested in iPhone and iPad.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot; (iPhone) or click on &quot;i&quot; (iPad).</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # 02 8793 3042.</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days. </content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book ant Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652365</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; TW POS</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Select Taiwan (TW) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123 
+Must be tested in iPhone and iPad.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot; (iPhone) or click on &quot;i&quot; (iPad).</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # </expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book ant Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C652366</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; AT POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652367</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; AT POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652368</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; AR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652369</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; AR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652370</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; VN POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652371</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; VN POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652372</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; ID POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652373</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; ID POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652374</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; PH POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C652375</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; PH POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655512</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; AU POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655513</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; AU POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655514</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; BE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655515</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; BE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655516</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; BR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655517</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; BR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655518</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; CA POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655519</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; CA POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655520</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; DE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655521</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; DE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655522</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; DK POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655523</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; DK POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655524</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; ES POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655525</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; ES POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655526</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; FR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655527</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; FR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655528</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; GB POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655529</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; GB POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655530</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; HK POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655531</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; HK POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655532</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; IE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655533</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; IE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655534</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; IN POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655535</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; IN POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655536</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; IT POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655537</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; IT POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655538</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; JP POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655539</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; JP POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655540</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; KR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655541</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; KR POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655542</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; MX POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655543</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; MX POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655544</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; MY POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655545</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; MY POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655546</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; NL POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655547</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; NL POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655548</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; NO POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655549</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; NO POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655550</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; NZ POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655551</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; NZ POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655552</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; SE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655553</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; SE POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655554</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; SG POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655555</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; SG POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655556</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; TH POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655557</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; TH POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655558</id>
+				<title>Hotel Loyalty members &gt; Gold member &gt; US POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C655559</id>
+				<title>Hotel Loyalty members &gt; Silver member &gt; US POS</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 	</sections>
