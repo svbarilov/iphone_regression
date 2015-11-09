@@ -25,7 +25,7 @@
 																<priority>2 - Must Test</priority>
 												
 				<estimate>300</estimate>
-																																<references></references> 
+																																<references>Calendar</references> 
 																<custom>
 										<preconds>Open hotel search form</preconds>
 										<steps_separated><step>
@@ -56,27 +56,6 @@ Guest is set to one
 Checkout day defaults to one day after check-in date</expected></step>
 <step>
 <index>2</index><content>Tap Search</content><expected>Search result screen displays search results for this selected date range and guest configuration</expected></step>
-</steps_separated>
-									</custom>
-							</case>
-												
-						<case>
-				<id>C643316</id>
-				<title>Select hotel stay longer than 28 days &gt; Verify user is prompted with error message</title>
-												<type>Manual</type>
-																<priority>3 - Test If Time</priority>
-												
-				<estimate>180</estimate>
-																																<references></references> 
-																<custom>
-										<preconds>Calendar UI is open</preconds>
-										<steps_separated><step>
-<index>1</index><content>Select hotel stay longer than 28 days</content><expected>Verify user is prompted with error message pop up: Title: &quot;Search Error&quot;
-Text: &quot;We are sorry, but we are unable to search for hotel stays longer than 28 days&quot;
-The button on the pop up is &quot;OK&quot;
- </expected></step>
-<step>
-<index>2</index><content>I tap OK on the error message</content><expected>I return to the search form</expected></step>
 </steps_separated>
 									</custom>
 							</case>
@@ -304,8 +283,8 @@ User taps on guest picker icon</preconds>
 												
 						<case>
 				<id>C655102</id>
-				<title>Hotel search results list screen &gt; Verify 1st, 52nd, and 53rd hotels in list are sponsored listings regardless of what sort is used</title>
-												<type>Manual</type>
+				<title>Hotel search results list screen &gt; Verify 1st, 51st, and 52nd hotels in list are sponsored listings regardless of what sort is used</title>
+												<type>Automated</type>
 																<priority>1 - Must Test</priority>
 												
 				<estimate>300</estimate>
@@ -314,7 +293,7 @@ User taps on guest picker icon</preconds>
 										<preconds>User has tapped the Hotels LOB button from the launcher screen and completed a hotel search.
 </preconds>
 										<steps>1. The list of hotels appears
-2. The user scrolls down to the 52nd and 53rd cells in the list
+2. The user scrolls down to the 51st and 52nd cells in the list
 3. The user changes the default sort of the list</steps>
 										<expected>1. The first hotel cell in the list contains the text &quot;Sponsored&quot; in the bottom right corner
 2. The 52nd and 53rd cells in the list contain the text &quot;Sponsored&quot; in the bottom right corner
@@ -709,6 +688,214 @@ And type random characters &quot;jkh894n&quot; or type a hotel name which is not
 						<case>
 				<id>C651797</id>
 				<title>Hotel result page&gt; Swipe down &gt; Type Hotel name &gt; Refresh search &gt; Verify that all filter options go to default values</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers.
+User should be on hotel results screen.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Swipe down on search results screen</content><expected>Filter by &quot;Hotel Name&quot; bar should appear on top of search results along with Filters button</expected></step>
+<step>
+<index>2</index><content>Now select multiple filter options and user result should be filtered. 
+Now Tap in search and do a new search for hotels in different city or different dates.</content><expected>Selected filter options should go to default and user should see all hotel results.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Hotel filer Map mode</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C677801</id>
+				<title>Hotel result page&gt; Tap on Map button &gt; Tap on Filter button &gt; Verify Hotel Filters screen appears</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677803</id>
+				<title>Hotel result page&gt; Tap on Map button &gt; Tap on Filter button &gt; Verify user can filter by Price</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677804</id>
+				<title>Hotel result page&gt; Tap on Map button &gt; Tap on Filter button &gt; Verify user can filter by Distance</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677805</id>
+				<title>Hotel result page&gt; Tap on Map button &gt; Tap on Filter button &gt; Verify user can filter by Ratings</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677806</id>
+				<title>Hotel result page&gt; Tap on Map button &gt; Tap on Filter button &gt; Verify user can filter by VIP Access</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Hotel search result cell</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C661498</id>
+				<title>Hotel search result cell &gt; Verify elements: thumbnail, hotel name, guest rating, neighborhood/distance, price</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has performed a search and the app has delivered results</preconds>
+										<steps>1. User looks at a hotel result cell</steps>
+										<expected>1. At the left is a thumbnail image of the hotel or a placeholder image of a bed (if the hotel thumbnail has not yet downloaded)
+2. To the right of the thumbnail is the main content of the cell: top line contains the hotel name (if it is too long for the cell, it is ellipsized not broken onto a second line)
+3. Second line of the cell contains the guest rating (squares or numeric values depending on October 2015 AB test)
+4. Third line of the cell contains the neighborhood or the distance (separate test case for this) 
+5. Far right of cell contains the price vertically centered and any urgency messaging and discount tags in the corner (separate test case for this)</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661502</id>
+				<title>Hotel search result cell &gt; Verify Current Location search result cells show distance in miles or kilometres based on device region settings</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has performed a Current Location search and delivered results.</preconds>
+										<steps>1. User looks at the hotel cells</steps>
+										<expected>2. Hotel cells contain a distance which is localized into either miles or kilometres based on the device region setting (eg: US uses imperial, Germany uses metric)</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661507</id>
+				<title>Hotel search result cell &gt; Verify non-Current location search result cell shows neighborhood name</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has performed a non-Current Location search and delivered results</preconds>
+										<steps>1. User looks at the hotel search result cell</steps>
+										<expected>2. Cell contains a neighborhood description (eg:Las Vegas: East of The Strip, The Strip)</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661508</id>
+				<title>Hotel search result cell &gt; Verify discount triangle tag appears in top right corner of cell and same percentage off is shown on hotel details and rooms &amp; rates</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User has done a hotel search and delivered results</preconds>
+										<steps>1. User looks at the cell of a discounted rate hotel</steps>
+										<expected>1. Discount tag appears in the top right corner of the cell in green.
+2. Discount percentage is greater than 0%
+3. Discount percentage shown on search results matches the discount shown on hotel details in the gallery ribbon
+4. Discount percentage shown on search results matches the discount shown on rooms &amp; rates 
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C678663</id>
+				<title>Hotel search result cell &gt; Verify strikethrough prices appear on discounted hotels</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have entered the Hotels LOB and completed a search with results</preconds>
+										<steps>1. User looks at the price section of the cell on a discounted hotel
+2. User selects the hotel and proceeds to hotel details</steps>
+										<expected>1. The original higher price for the hotel appears with a strikethrough, the discounted price appears in bold.  The strikethrough price must not be higher than the discounted price and the difference between the two prices must match the percentage off corner tag.
+2. The same strikethrough price is visible at the bottom right of the gallery - all discount information is consistent between the two screens.</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hotel search result map mode</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C677793</id>
+				<title>Hotel result page&gt; Tap Map button &gt; Verify map page</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677795</id>
+				<title>Hotel result page&gt; Tap Map button &gt; Taping on List button should return user to search result list mode</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677797</id>
+				<title>Hotel result page&gt; Tap Map button &gt; Swipe to the right &gt; Tap on &quot;Search Map&quot; button &gt; Verify new Hotels search result appear on the map</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677800</id>
+				<title>Hotel result page&gt; Tap Map button &gt; Tap on &quot;Margining glass&quot; icon &gt; Change city a tap Search &gt; Verify that search results are loaded in the map mode</title>
 												<type>Other</type>
 																<priority>2 - Must Test</priority>
 												
@@ -718,14 +905,6 @@ And type random characters &quot;jkh894n&quot; or type a hotel name which is not
 								</cases>
 							</section>
 			<section>
-		<name>Hotel search result cell</name>
-		<description></description>
-									</section>
-			<section>
-		<name>Hotel search result map mode</name>
-		<description></description>
-									</section>
-			<section>
 		<name>Hotel MRU list</name>
 		<description></description>
 						
@@ -733,7 +912,7 @@ And type random characters &quot;jkh894n&quot; or type a hotel name which is not
 									
 						<case>
 				<id>C655378</id>
-				<title>Hotel MRU list &gt; Verify &quot;Current Location&quot; is at the top of the MRU list every time</title>
+				<title>Hotel Most Recently Used list &gt; Verify &quot;Current Location&quot; is at the top of the MRU list every time</title>
 												<type>Manual</type>
 																<priority>1 - Must Test</priority>
 												
@@ -751,7 +930,7 @@ User has allowed Expedia Bookings location services.</preconds>
 												
 						<case>
 				<id>C655379</id>
-				<title>Hotel MRU list &gt; Verify reverse geocoded location appears in the MRU list as the second entry under &quot;Current Location&quot;</title>
+				<title>Hotel Most Recently Used list &gt; Verify reverse geocoded location appears in the MRU list as the second entry under &quot;Current Location&quot;</title>
 												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
@@ -768,11 +947,330 @@ User has allowed Expedia Bookings location services</preconds>
 			<section>
 		<name>Hotel search field</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C656771</id>
+				<title>Hotel search screen &gt; Verify user can search by address</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotels in &quot;114 Sansome, San Francisco&quot;
+Select area from autosuggestion list and tap search</content><expected>User should get hotels search result in the area searched for</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656772</id>
+				<title>Hotel search screen &gt; Verify user can search by zip code</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotels in 94104
+Select area from autosuggestion list and tap search</content><expected>User should get hotels search result in the area searched for</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656773</id>
+				<title>Hotel search screen &gt; Verify user can search by airport code</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotels in &quot;SFO&quot;
+Select area from autosuggestion list and tap search</content><expected>User should get hotels search result in the area searched for</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656774</id>
+				<title>Hotel search form  &gt; &quot;X&quot; button should clear the search field</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap something in the Hotel search filed, then 
+Tap &quot;X&quot; button</content><expected>Tapping &quot;X&quot; button should clear the search field</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656775</id>
+				<title>Hotel search form  &gt; Tapping on calendar shouldn&apos;t change search conent</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Type &quot;San Francisco&quot; into Hotel search filed
+Select 2 adults and one child as travelers
+Tap On calendar field</content><expected>Search content (location and number of travelers) should stay the same</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656776</id>
+				<title>Hotel search form  &gt; Expedia logo button leads to launch screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotel in random city for a random date</content><expected>User should get hotel search results</expected></step>
+<step>
+<index>2</index><content>Tap Expedia logo icon</content><expected>User should be taken back to Launch screen</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656777</id>
+				<title>Hotel search form  &gt; Hotels app shows hotels in Current Location by default</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on Launch screen
+
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Hotels (to select hotels line of business)</content><expected>User should be taken to search form
+By default hotel search field should have &quot;Current location&quot; value</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656778</id>
+				<title>Hotel search form  &gt; &quot;Current location&quot; should be automatically erased when traveler typing in</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on Launch screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap Hotels (to select hotels line of business)</content><expected>User should be taken to search form
+By default hotel search field should have &quot;Current location&quot; value</expected></step>
+<step>
+<index>2</index><content>Start typing &quot;San Francisco&quot; in hotel search field</content><expected>&quot;Current location&quot; value should be erased
+User can type his search string</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656779</id>
+				<title>Hotel search form  &gt; Search for city name that is common to many states shows suggestions and gives results</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Try typing the following:
+ -Clinton          |
+ -Statue of Liberty
+ -Quad Cities</content><expected>For all entries user should get autosuggestions list that reflects multiple destinations with similar name</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656780</id>
+				<title>Hotel search form  &gt; Auto suggestion works correctly</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Type &quot;Chicago&quot; in search field</content><expected>Default search field value: &quot;Current location&quot; should disappear
+User should see autosuggestions list
+The autosuggestions list should contain &quot;Chicago&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656781</id>
+				<title>Hotel search form  &gt; Auto suggestion list reflects entered POI</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Launch the app in &quot;en en_US&quot; POS
+Type &quot;Los An&quot; into hotel search field
+
+</content><expected>Autosuggestion list should include &quot;Los Angeles, CA&quot;  (reflect &quot;en en_US&quot; POS)</expected></step>
+<step>
+<index>2</index><content>Launch the app in &quot;de de_DE&quot; POS
+Type &quot;Los An&quot; into hotel search field</content><expected>Autosuggestion list should include &quot; Los Angeles, Kalifornien, USA&quot;  (reflect &quot;de de_DE&quot; POS)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656782</id>
+				<title>Hotel search form  &gt; Search for North Korea do not returns hotels</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotels in &quot;North Korea&quot;</content><expected>User should see alert message with &quot;No hotels available tonight&quot; title</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656783</id>
+				<title>Hotel search form  &gt; Search for specific hotel name returns autosuggest list and bring to Hotel details</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Type &quot;Hyatt New Orleans&quot; in search field</content><expected>Autosuggestions list should appear
+It should contain the hotel &quot;Hyatt New Orleans&quot;</expected></step>
+<step>
+<index>2</index><content>Select Hotel form autosuggestions list
+Select random travel dates and tap search</content><expected>User should be taken to hotel details page</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656784</id>
+				<title>Hotel search form  &gt; Changing POS should initiate a new search</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App is in en_en_US POS
+Hotel search form is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for hotel in &quot;San Francisco&quot;</content><expected>User should get hotel search results</expected></step>
+<step>
+<index>2</index><content>Change POS to &quot;de de_DE&quot; </content><expected>Changing POS should initiate a new search</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661493</id>
+				<title>Hotel search form  &gt; Cancel button leads to launch screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Hotel search form is open</preconds>
+										<steps>Tap Cancel button on hotel search form</steps>
+										<expected>User should be taken back to Launch screen</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel search errors</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C643316</id>
+				<title>Select hotel stay longer than 28 days &gt; Verify user is prompted with error message</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Calendar UI is open</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select hotel stay longer than 28 days</content><expected>Verify user is prompted with error message pop up: Title: &quot;Search Error&quot;
+Text: &quot;We are sorry, but we are unable to search for hotel stays longer than 28 days&quot;
+The button on the pop up is &quot;OK&quot;
+ </expected></step>
+<step>
+<index>2</index><content>I tap OK on the error message</content><expected>I return to the search form</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661496</id>
+				<title>Search for Hotels tonight &gt; Verify No Hotels Available tonight error message.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661497</id>
+				<title>Search for Direct hotel search &gt; Verify user gets error message if the hotel is sold out.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -871,27 +1369,306 @@ User should be on hotel details screen</preconds>
 			<section>
 		<name>Hotel details messaging</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C656786</id>
+				<title>Hotel details page &gt; Verify % of guests recommend</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for any hotels in future date and default number of travelers
+Select any hotel from search result 
+Hotel details screen should load</preconds>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656787</id>
+				<title>Hotel details page &gt; Verify &quot;Tonight only: save %&quot; message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for any hotels for tonight and default number of travelers
+Select hotel from search result which will have &quot;Tonight only: save %&quot; message
+</preconds>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656788</id>
+				<title>Hotel details page &gt; Verify &quot;Only n rooms Left&quot; message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for any hotels for tonight and default number of travelers
+Select hotel from search result which will have &quot;Only n rooms Left&quot; message
+</preconds>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656789</id>
+				<title>Hotel details page &gt; Verify &quot;Mobile exclusive: save %&quot; message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>
+Search for any hotels in future date and default number of travelers
+Select any hotel from search result 
+</preconds>
+										<steps>Find hotel that have following message &quot;Mobile exclusive: save %&quot; message</steps>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656790</id>
+				<title>Hotel details page &gt; Verify &quot;Stay n nights and save %&quot; message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>
+Search for any hotels in future date and default number of travelers
+Select any hotel from search result  that has following message &quot;Stay n nights and save %&quot;</preconds>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656791</id>
+				<title>Hotel details page &gt; Verify &quot;Seasonal deal: save %&quot; message</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for any hotels in future date and default number of travelers
+Select any hotel from search result that has following message  &quot;Seasonal deal: save %&quot; </preconds>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656792</id>
+				<title>Hotel details page &gt; Verify empty message</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in future date and default number of travelers for Warsaw, Poland
+Sort search results by Rating
+Scroll to the bottom of search results   </preconds>
+										<steps>Select hotel that does not have neither rating nor message</steps>
+										<expected>Message and ratings are slides up underneith the gallary</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details link to reviews</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C661494</id>
+				<title>Hotel details page &gt; Verify Reviews cell properties</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results that has user ratings
+User should be on hotel details screen</preconds>
+										<steps>Observer user review cell </steps>
+										<expected>User should see 5 squares 
+xxxx Reviews
+Chevron &quot;&gt;&quot;</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C661495</id>
+				<title>Hotels details page &gt; tap on Reviews cell &gt; Verify Reviews screen loads</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results that has user ratings
+User should be on hotel details screen</preconds>
+										<steps>Tap on Reviews cell</steps>
+										<expected>User should land on reviews screen
+Recent filter should be selected by default </expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details short description</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683998</id>
+				<title>Select Hotel &gt; Verify short description</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel search result page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select random hotel</content><expected>User is taken to hotel details page
+User should see hotel&apos;s short description under hotel&apos;s pictures
+Hotel&apos;s short description should contain general info about hotel
+There should be &quot;read more&quot; button near short description</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details map</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C656768</id>
+				<title>Hotel details page &gt; Verify that map is present with hotels pin.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels in any city for future date and default number of travelers
+Pick any hotel from search results
+User should be on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>When user is on Hotel Details page.</content><expected>User should see Map with hotel pin present in the center.</expected></step>
+<step>
+<index>2</index><content>Tap on the map.</content><expected>Map opens up full screen and user is able to move the map and checkout the map area.</expected></step>
+<step>
+<index>3</index><content>Verify when user goes to hotels details page and looks at map</content><expected>The pin on the map does not run on map.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C664970</id>
+				<title>Hotel Details Page &gt; Verify the hotel pin dont run on the map.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details amenity icons</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C656767</id>
+				<title>Hotel details page &gt; Verify presence to amenity icons</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for any hotels in future date and default number of travelers
+Select any hotel from search result 
+Hotel details screen should load</preconds>
+										<steps>swipe down until amenity icons section </steps>
+										<expected>Verify amenity icons present. They should correspond  to the desktop site amenity list for the same hotel  </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656769</id>
+				<title>Hotel details page &gt; Navigate to  amenities section&gt; Verify that icons can be horizontally scrolled if not fit into the screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>180</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Search for hotels &quot;Green Valley Ranch Resort and Spa&quot;  future date and default number of travelers
+User should land on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>swipe down until amenity icons are visible </content><expected>Verify icons accuracy against desktop website 
+</expected></step>
+<step>
+<index>2</index><content>swipe left/right</content><expected>Verify icons can be scrolled </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel details long description</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683982</id>
+				<title>Select Hotel &gt; Verify long description</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel search result page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select random hotel</content><expected>User is taken to hotel details page
+User should see hotel&apos;s short description under hotel&apos;s pictures
+There should see &quot;read more&quot; button near short description</expected></step>
+<step>
+<index>2</index><content>Tap &quot;read more&quot; button
+Scroll screen down</content><expected>User should see hotel long description
+Hotel long description includes such items as:
+ - Property amenities
+ - Address
+ - Policies
+ - Fees
+ - Mandatory fees and taxes
+ - </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -901,7 +1678,78 @@ User should be on hotel details screen</preconds>
 		<section>
 		<name>Hotel room cells</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C677799</id>
+				<title>Select Hotel &gt; Verify Hotel room cells&apos; info</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel search result page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select random hotel</content><expected>User is taken to hotel details page</expected></step>
+<step>
+<index>2</index><content>Tap &quot;select&quot; button </content><expected>User is taken to room selection screen
+Room selection screen consists of multiple cells that represent a room
+Every cell should indicate:
+- room description
+- whether the room is smoking or non-smoking
+- price
+- number of beds
+- size of beds
+- whether the rate is refundable or non-refundable
+
+Optionally, cell may include number of rooms left</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677809</id>
+				<title>Select Hotel &gt; Select hotel room &gt; Verify user on Checkout screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel search result page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select random hotel</content><expected>User is taken to hotel details page</expected></step>
+<step>
+<index>2</index><content>Tap &quot;select&quot; button </content><expected>User is taken to room selection screen</expected></step>
+<step>
+<index>3</index><content>Select hotel room</content><expected>User should land on Hotel overview room type screen</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677811</id>
+				<title>Select Hotel &gt; Tap &quot;Back&quot; button&quot; &gt; Verify user is on Hotel details page</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel search result page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Select random hotel</content><expected>User is taken to hotel details page</expected></step>
+<step>
+<index>2</index><content>Tap &quot;select&quot; button </content><expected>User is taken to room selection screen</expected></step>
+<step>
+<index>3</index><content>Tap &quot;Back&quot; button </content><expected>User should be taken to Hotel details page</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -915,19 +1763,181 @@ User should be on hotel details screen</preconds>
 			<section>
 		<name>Hotel overview room type</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C688261</id>
+				<title>Select Hotel and Room &gt; Verify hotel overview room type info</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;Select room&quot;</content><expected>User should be on Hotel Room and Rates screen</expected></step>
+<step>
+<index>2</index><content>Select random room</content><expected>User should be on hotel overview room type screen
+Verify the following on the screen:
+1. Hotel name,room type, number and type of beds
+2. Room picture
+3. Hotel amenities (smoking or non-smoking room)
+4. Total price with tax
+5. There should be &quot;i&quot; button next to the price, which brings summary cost pop up
+6. Dates of stay and total number of nights of stay
+7. Total number of guests
+
+Screen may reflect:
+- Whether free cancellation applies
+- Mobile discounts
+- &quot;Best Price Guaranteed message&quot;
+
+![](index.php?/attachments/get/5957)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C688262</id>
+				<title>Select Hotel and Room &gt; Tap Checkout &gt; Verify Checkout screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;Select room&quot;</content><expected>User should be on Hotel Room and Rates screen</expected></step>
+<step>
+<index>2</index><content>Select random room</content><expected>User should be on hotel overview room type screen</expected></step>
+<step>
+<index>3</index><content>Tap &quot;Checkout button&quot;</content><expected>The page should scroll down and take user to Hotel Checkout screen![](index.php?/attachments/get/5955)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C688263</id>
+				<title>Select Hotel and Room &gt; Tap Cancel &gt; Verify room cells</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is on hotel details screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap &quot;Select room&quot;</content><expected>User should be on Hotel Room and Rates screen</expected></step>
+<step>
+<index>2</index><content>Select random room</content><expected>User should be on hotel overview room type screen</expected></step>
+<step>
+<index>3</index><content>Tap &quot;Cancel&quot; button</content><expected>User should be taken back to hotel rooms and rates screen
+
+![](index.php?/attachments/get/5958)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel overview bed type</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C677788</id>
+				<title>Select room from Hotel Details with particular bedtype &gt; Verify same bedtype is presented on overview screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel overview value adds</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C677798</id>
+				<title>Select &apos;Pay Later&apos; room from Hotel Details &gt; Verify overview page shows &apos;Due to Expedia Today: $0.00&apos;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677796</id>
+				<title>Select room from Hotel Details with Free Cancellation &gt; Verify overview page shows &apos;Free Cancellation by &lt;DATE&gt;&apos;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677794</id>
+				<title>Select room from Hotel Details with &apos;Mobile exclusive&apos; price &gt; Verify overview page shows &apos;Mobile exclusive: save XX%&apos;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677792</id>
+				<title>Select room from Hotel Details with discount &gt; Verify overview page shows &apos;save XX%&apos;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C677791</id>
+				<title>Select room from Hotel Details without discounts, free breakfast, etc &gt; Verify overview page shows &apos;Best Price Guarantee&apos;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel overview summary cell</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C677785</id>
+				<title>Search hotel for 6 Guests &gt; Verify 6 Guests presented on overview screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<steps_separated><step>
+<index>1</index><content></content><expected></expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel overview total cost breakdown</name>
 		<description></description>
@@ -935,7 +1945,83 @@ User should be on hotel details screen</preconds>
 			<section>
 		<name>Hotel checkout login button</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683983</id>
+				<title>Hotel checkout page &gt; Verify Sign in button is present if user not signed in.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is not logged into the app.
+Search for hotels in Las Vegas (or any city) and Select any hotel and go to hotels checkout page on iphone.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Verify Sign in for faster booking button is present.</content><expected>faster booking button is present or guest booking options are present.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683989</id>
+				<title>Hotel Checkout page &gt; Tap on Sign In button &gt; Verify User goes to Create account page.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is not logged into the app.
+Search for hotels in Las Vegas (or any city) and Select any hotel and go to hotels checkout page on iphone.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Tap on Sign in for faster bookings button </content><expected>Verify the Account creation page shows up with Sign in fields (Email Address and Password) with Sign in and Sign in With Facebook button.
+
+On the bottom of the screen Create an Expedia Account link is present.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683990</id>
+				<title>Verify User can sign in using Valid account details</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is not logged into the app.
+Search for hotels in Las Vegas (or any city) and Select any hotel and go to hotels checkout page on iphone.
+Tap on Sign in for faster bookings button</preconds>
+										<steps_separated><step>
+<index>1</index><content>Add Email: qa-ehcc@mobiata.com / 3xp3d1acc account details for Sign in on Integration.</content><expected>verify User logs in .</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683991</id>
+				<title>Verify user can log in using facebook login.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User is not logged into the app.
+Search for hotels in Las Vegas (or any city) and Select any hotel and go to hotels checkout page on iphone.
+Tap on Sign in for faster bookings button</preconds>
+										<steps_separated><step>
+<index>1</index><content>On Sign in page tap on Sign in with Facebook button.</content><expected>Check Facebook Login With Facebook app.
+Check Facebook Login Without Facebook app installed (Browser sign in)</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel checkout guest details</name>
 		<description></description>
@@ -943,7 +2029,66 @@ User should be on hotel details screen</preconds>
 		<section>
 		<name>Hotel guest details traveler info screen</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683984</id>
+				<title>Fill all requred fieild except &apos;First Name&apos; -&gt;Next button should be disabled</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C683985</id>
+				<title>Fill all requred fieild except &apos;Last Name&apos; -&gt;Next button should be disabled</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C683986</id>
+				<title>Fill all requred fieild except &apos;email&apos; -&gt;Next button should be disabled</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C683988</id>
+				<title>Fill all requred fieild except &apos;phone&apos; -&gt;Next button should be disabled</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>240</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C684001</id>
+				<title>Email field should be in correct format, otherwise alert: &quot;Please enter a valid e-mail address&quot;</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<steps>emails to test:
+aaa@aaa
+aaa.aaa.aaa
+@aaa.aaa</steps>
+									</custom>
+							</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -953,7 +2098,20 @@ User should be on hotel details screen</preconds>
 		<section>
 		<name>Hotel checkout payment details payment info screen</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C684000</id>
+				<title>Fill all requred fieild except &apos;Credit Card&apos; -&gt; Done button should be disabled</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -1208,19 +2366,433 @@ Tapping &quot;OK&quot; on the alert should take user back to &quot;Guest info&qu
 			<section>
 		<name>Hotels confirmation screen</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C656770</id>
+				<title>Proceed to confirmation as a guest user &gt; Verify deafult info is present</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Book hotel for 5 nights and 2 travelers</preconds>
+										<expected>1. Message &apos;Hotel Booked&apos; is present.
+2. Hotel name is present and match name from search page
+3. Booking dates same as selected on search page
+4. &apos;2 Guests&apos; are displayed
+5. Itinerary # message is displayed, where:
+- number is not nil(null) and contains digits
+- email address is present(same as used for checkout)
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C656785</id>
+				<title>Proceed to confirmation &gt; Add to Passbook</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>360</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Proceed to confirmation page</preconds>
+										<steps_separated><step>
+<index>1</index><content>1. Press &apos;Add to Passbook&apos; button
+</content><expected>1. Add to Passbook preview will appear
+2. Dates on preview same as selected on search page
+3. Hotel name same as selected on search page</expected></step>
+<step>
+<index>2</index><content>2. press &apos;Add&apos; button</content><expected>1. redirected back to confirmation screen, &apos;Add to Passbook&apos; has check-mark
+2. open Wallet on device and make sure Hotel is exists there. </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C662146</id>
+				<title>Proceed to confirmation &gt; Add to Calendar</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>360</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Proceed to confirmation page</preconds>
+										<steps_separated><step>
+<index>1</index><content>1. Press add to Calendar</content><expected>1. Popup with permission to add to Calendar should appear.
+2. &apos;Add to Calendar&apos; has check-mark</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C662147</id>
+				<title>Proceed to confirmation &gt; Share via Email</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>360</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Proceed to confirmation page</preconds>
+										<steps_separated><step>
+<index>1</index><content>Press &apos;Share via Email&apos; button</content><expected>New Email template page should appear
+Subject should include: City name where hotel booked and staying dates</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C662148</id>
+				<title>Proceed to confirmation &gt; Done button &gt; Your trips screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>360</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Proceed to confirmation page</preconds>
+										<steps_separated><step>
+<index>1</index><content>1. Press Done button</content><expected>&apos;Your Trips&apos; screen should appear with next info:
+- Hotel name
+- Check in date
+- &apos;Direction&apos; button
+- &apos;Call Hotel&apos; button </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C662149</id>
+				<title>Proceed to confirmation &gt; Call Expedia Customer Support</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>360</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Proceed to confirmation page</preconds>
+										<steps_separated><step>
+<index>1</index><content>1. Press &apos;Call Expedia Customer Support&apos;</content><expected>1. popup with hotel phone number should appear</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel review screen</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C661499</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify Recent filter</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661500</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify Favorable filter</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661501</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify Critical filter</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661503</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify total number of reviews between details and review screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661504</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify long review description can expand</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C661505</id>
+				<title>Proceed to Hotel Reviews screen &gt; Verify when tap on &quot;Back&quot; button user lands on details screen</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel booking flows</name>
 		<description></description>
-										<sections>
+						
+		<cases>
+									
+						<case>
+				<id>C678669</id>
+				<title>Hotel search &gt; shop like a user would, select multiple hotels and read reviews before going to checkout</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Very often, we test like testers - for this test, try to behave as a user who really has to choose a good hotel at the right price would.</preconds>
+										<steps>1. Deliver search results for a city
+2. Select a hotel, go to details and scroll to the bottom, back out to search results, repeat this process multiple times
+3. Select a hotel, go to the reviews screen, change reviews tabs and scroll through a few reviews, back out to search results, repeat this process multiple times
+4. Select a hotel, go to Rooms &amp; Rates, select a rate and go to checkout, back out to Rooms &amp; Rates and select a different rate, go to checkout, repeat this process multiple times.</steps>
+										<expected>1. Search results appear for the correct city, which is reflected on the map view and the list view
+2. No crashing should occur when user backs out, no slowness should be encountered, the hotel which was selected from search results should be the one you see on hotel details.
+3. No unintended changing of guest(s) or dates should occur
+4. Checkout should update for the rate of the selected room </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C684002</id>
+				<title>FR POS should show &apos;I Accept&apos; button before user able to swipe for booking</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C684003</id>
+				<title>DE POS should show &apos;I Accept&apos; button before user able to swipe for booking</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+								<sections>
 		<section>
 		<name>Hotel ETP flows</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683992</id>
+				<title>ETP checkout flow with &quot;Pay now&quot; option</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Given I start simulator in &quot;en en_US&quot; with Hotels app </preconds>
+										<steps>    
+   </steps>
+										<steps_separated><step>
+<index>1</index><content> I search for hotel in &quot;Waikiki&quot; with checkin date &quot;two months from today&quot;
+ Then filter hotels by &quot;Hilton Hawaiian Village&quot;
+ And I select &quot;ETP Hilton Hawaiian Village Waikiki Beach&quot; hotel from hotels list
+ Then I tap on &quot;Book Now, Pay Later&quot; button
+    
+   </content><expected>And I land on &quot;Book Now, Pay Later&quot; page</expected></step>
+<step>
+<index>2</index><content> Then I tap on &quot;Select Room&quot; button
+    
+    </content><expected>Then I expect to see &quot;pay now pay later option&quot; area on &quot;rooms and rates&quot;</expected></step>
+<step>
+<index>3</index><content>Then &quot;Pay Now&quot; should be highlighted
+   
+    </content><expected> Then I expect to see rooms list
+ And I confirm that &quot;$0 Due now&quot; price is not present on the rooms card</expected></step>
+<step>
+<index>4</index><content>And I select 1st available room
+    
+    </content><expected>And I expect to see Fees Paid at Hotel to be more than &quot;0.00&quot;
+Then I expect to see Due to Expedia Today to be more than &quot;0.00&quot;</expected></step>
+<step>
+<index>5</index><content>And I press on the Hotels Checkout button
+Then I press Log in for faster booking
+And I enter &quot;qa-ehcc@mobiata.com&quot; as account email with &quot;3xp3d1acc&quot; password
+    </content><expected>And I expect to see Amount to be Paid Now to be more than &quot;0.00&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C684007</id>
+				<title>Hotels user chooses Pay Later option without deposit</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Given I start simulator in &quot;en en_US&quot; with Hotels app</preconds>
+										<steps_separated><step>
+<index>1</index><content>When I search for hotel in &quot;Waikiki&quot; with checkin date &quot;two months from today&quot;
+Then filter hotels by &quot;Hilton Hawaiian Village&quot;
+And I select &quot;ETP Hilton Hawaiian Village Waikiki Beach&quot; hotel from hotels list
+Then I tap on &quot;Book Now, Pay Later&quot; button
+    
+    </content><expected>And I land on &quot;Book Now, Pay Later&quot; page</expected></step>
+<step>
+<index>2</index><content>Then I tap on &quot;Select Room&quot; button
+    
+    
+    </content><expected>Then I expect to see &quot;pay now pay later option&quot; area on &quot;rooms and rates&quot;</expected></step>
+<step>
+<index>3</index><content>And I press &quot;Pay Later&quot; button</content><expected>Then I expect to see rooms list
+And I confirm that &quot;$0 Due now&quot; price is present on the rooms card
+    </expected></step>
+<step>
+<index>4</index><content>Then I select 1st available room
+    
+    </content><expected>Then I expect to see Due to Expedia Today to be equal &quot;0.00&quot;</expected></step>
+<step>
+<index>5</index><content>And I tap on Cost Summary button
+    </content><expected>Then I see Cost Summary popup
+And I expect to see &quot;Due to Expedia Today&quot; to be equal &quot;0.00&quot; on Cost Summary</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C684865</id>
+				<title>Hotels user chooses Pay Later with deposit</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Given I start simulator in &quot;en en_US&quot; with Hotels app</preconds>
+										<steps_separated><step>
+<index>1</index><content>Then I press the Search magnifying glass icon
+    And I enter &quot;Las Vegas&quot; into search field
+    And I press the Calendar button
+    And I set the checkin date to &quot;60 days from today&quot; and checkout to &quot;63 days from today&quot;
+    Then filter hotels by &quot;Trump International Hotel Las Vegas&quot;
+    And I select &quot;Trump International Hotel Las Vegas&quot; hotel from hotels list
+    Then I tap on &quot;Book Now, Pay Later&quot; button</content><expected> And I land on &quot;Book Now, Pay Later&quot; page</expected></step>
+<step>
+<index>2</index><content>Then I tap on &quot;Select Room&quot; button</content><expected>Then I expect to see &quot;pay now pay later option&quot; area on &quot;rooms and rates&quot;</expected></step>
+<step>
+<index>3</index><content>And I press &quot;Pay Later&quot; button</content><expected>Then I expect to see rooms list</expected></step>
+<step>
+<index>4</index><content>And I select 1st available room</content><expected>Then I expect to see Due to Expedia Today to be more than &quot;0.00&quot;</expected></step>
+<step>
+<index>5</index><content>And I tap on Cost Summary button</content><expected>Then I see Cost Summary popup
+And I expect to see &quot;Due to Expedia Today&quot; to be more than &quot;0.00&quot; on Cost Summary</expected></step>
+<step>
+<index>6</index><content>Then I close the Cost Summary popover
+    And I press on the Hotels Checkout button
+    Then I press Log in for faster booking
+    And I enter Expedia valid credentials </content><expected>And I expect to see Amount to be Paid Now to be more than &quot;0.00&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C686585</id>
+				<title>Check ETP for direct hotel search</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Given I start simulator in &quot;en en_US&quot; with Hotels</preconds>
+										<steps_separated><step>
+<index>1</index><content>I search for hotel in &quot;Hilton Hawaiian Village Waikiki Beach&quot; with checkin date &quot;two months from today&quot;
+</content><expected>I land on Hotel details page</expected></step>
+<step>
+<index>2</index><content>I tap on &quot;Book Now, Pay Later&quot; button</content><expected>I land on &quot;Book Now, Pay Later&quot; page</expected></step>
+<step>
+<index>3</index><content>I tap on &quot;Select Room&quot; button</content><expected>I expect to see &quot;pay now pay later option&quot; area on &quot;rooms and rates&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C686586</id>
+				<title>Check ETP for Non Merchant hotel</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>I start simulator in &quot;en en_US&quot; with Hotels app with &quot;Show Non-Merchant&quot; filter in Info screen</preconds>
+										<steps_separated><step>
+<index>1</index><content>When I search for hotel in &quot;Paris, France&quot; with checkin date &quot;three months from today&quot;</content><expected>Land on search result screen</expected></step>
+<step>
+<index>2</index><content>Then filter hotels by &quot;Appi Hotel&quot;
+    And I select &quot;Appi Hotel&quot; hotel from hotels list
+    Then I press &quot;Select&quot; button</content><expected>Then I expect to see rooms list
+    And I confirm that &quot;$0 Due now&quot; price is present on the rooms card</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C686587</id>
+				<title>ETP checkout flow with &quot;Pay now&quot; option with Resort fee</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C686588</id>
+				<title>Hotels user chooses Pay Later option without deposit with resort fee</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C686589</id>
+				<title>Hotels user chooses Pay Later with deposit</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel Map Search</name>
 		<description>User switches from list mode to map mode in Search Results list, performs a new search and accesses details-&gt;checkout</description>
@@ -1228,19 +2800,235 @@ Tapping &quot;OK&quot; on the alert should take user back to &quot;Guest info&qu
 			<section>
 		<name>Hotel Search from Car confirmation page - hotel attach</name>
 		<description>(non-US POS have hotel attach instead of air attach)</description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683978</id>
+				<title>Book Hotel from Cars Confirmation Page(same day pickup/dropoff)</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>1. Book Car with same pickup and drop off day</preconds>
+										<steps>Book Hotel from Car Confirmation Page</steps>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683979</id>
+				<title>Book Hotel from Cars Confirmation Page(different pickup/dropoff)</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel search from Flight confirmation page - hotel attach</name>
 		<description>(non-US POS have hotel attach instead of air attach)</description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683980</id>
+				<title>Book Hotel from Flight confirmation page (one way flight)</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C683981</id>
+				<title>Book Hotel from Flight confirmation page (2 ways flight)</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel search from Air Attach banner on confirmation page</name>
 		<description></description>
-									</section>
+						
+		<cases>
+									
+						<case>
+				<id>C683987</id>
+				<title>Air Attach banner on Confirmation and Itinerary screen.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>300</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>You should have a flight booked with air attached.</preconds>
+										<steps_separated><step>
+<index>1</index><content>Search for a flight from SFO to LAS for future one way with 1 adult </content><expected>Confirm search result show up </expected></step>
+<step>
+<index>2</index><content>Select any flight ( do not select low cost carrier)</content><expected></expected></step>
+<step>
+<index>3</index><content>Book the flight as guest or singin user (integration environment only)
+qa-ehcc@mobiata.com/3xp3d1acc</content><expected>Verify AirAttach banner on Confirmation screen </expected></step>
+<step>
+<index>4</index><content>Go to to Trips screen </content><expected>Verify AirAttach banner is displayed </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677789</id>
+				<title>Hotel Booking from Air Attach banner on confirmation page for one-way flight</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Book air attach one-way flight by using step from &quot;Air Attach banner on Confirmation and Itinerary screen&quot; test case up to confirmation screen</preconds>
+										<steps>1. tap on &quot;Add a Hotel&quot; banner 
+2. Perform any  hotel booking</steps>
+										<expected>1. Verify the hotel search form contain: date range on one day from flight arrival date till next day, number of travelers, and destination  
+2. Hotel confirmation page is displayed</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C687410</id>
+				<title>Hotel booking from Air Attach banner on confirmation page for roundtrip flight</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Book air attach roundtrip flight by using step from &quot;Air Attach banner on Confirmation and Itinerary screen&quot; test case up to confirmation screen</preconds>
+										<steps>1. tap on &quot;Add a Hotel&quot; banner
+2. Perform any hotel booking</steps>
+										<expected>1. Verify the hotel search form contain: date range on one day from flight arrival date till next day, number of travelers, and destination
+2. Hotel confirmation page is displayed</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C687411</id>
+				<title>Hotel Booking from Air Attach banner on itinerary page for one-way flight</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Book air attach one-way flight by using step from &quot;Air Attach banner on Confirmation and Itinerary screen&quot; test case up to itinerary screen</preconds>
+										<steps>1. tap on &quot;Add a Hotel&quot; banner from itin screen
+2. Perform any hotel booking</steps>
+										<expected>1. Verify the hotel search form contain: date range on one day from flight arrival date till next day, number of travelers, and destination
+2. Hotel confirmation page is displayed
+3. Go to Itin screen and verify &quot;Air Attach&quot; banner is replaced with Hotel itin card </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C687412</id>
+				<title>Hotel Booking from Air Attach banner on itinerary page for roundtrip flight</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Book air attach roundtrip flight by using step from &quot;Air Attach banner on Confirmation and Itinerary screen&quot; test case up to itinerary screen</preconds>
+										<steps>1. tap on &quot;Add a Hotel&quot; banner from itin screen
+2. Perform any hotel booking</steps>
+										<expected>1. Verify the hotel search form contain: date range on one day from flight arrival date till next day, number of travelers, and destination
+2. Hotel confirmation page is displayed
+3. Go to Itin screen and verify &quot;Air Attach&quot; banner is replaced with Hotel itin card </expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
 			<section>
 		<name>Hotel search from Air Attach banner on Itinerary screen</name>
 		<description></description>
 									</section>
+			<section>
+		<name>Hotel Booking with Coupon</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C683994</id>
+				<title>Apply the coupon and remove it, proceed with checkout.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>Test on Integration. Please use coupon: MOBILE5  </preconds>
+										<steps>On Checkout page apply the coupon and remove it, proceed with checkout. Test it as Logged in and as a guest user.</steps>
+										<expected>Booking must be successful. </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683995</id>
+				<title>Apply the coupon and back out to Rooms &amp; Rates.</title>
+												<type>Manual</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>600</estimate>
+																																<references></references> 
+																<custom>
+										<steps>Apply the coupon and back out to Rooms &amp; Rates, select the same room or a different room and go forward to Checkout.</steps>
+										<expected>Coupon should not be applied.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683996</id>
+				<title>Apply the coupon, then log in and complete booking.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<steps>Apply the coupon, then log in and complete booking.</steps>
+										<expected>The booking must be done successful. </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C683997</id>
+				<title>Apply the coupon with the slide to purchase bar visible.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C683999</id>
+				<title>Apply the coupon, background the app for a few minutes.</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
 			<section>
@@ -1263,10 +3051,9 @@ Tapping &quot;OK&quot; on the alert should take user back to &quot;Guest info&qu
 																																<references></references> 
 																<custom>
 										<preconds>Select Taiwan (TW) POS and Sign In into the Gold ACC. 
-Please use: opd_rewards_gold@yahoo.com / test123 
-Must be tested in iPhone and iPad.</preconds>
+Please use: opd_rewards_gold@yahoo.com / test123 </preconds>
 										<steps_separated><step>
-<index>1</index><content>Open EB App and click on &quot;Settings&quot; (iPhone) or click on &quot;i&quot; (iPad).</content><expected>Info page will open.</expected></step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
 <step>
 <index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # 02 8793 3042.</expected></step>
 <step>
@@ -1274,7 +3061,7 @@ Must be tested in iPhone and iPad.</preconds>
 <step>
 <index>4</index><content>Select any Hotel from the list and go to Checkout</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
 <step>
-<index>5</index><content>Book ant Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
 </steps_separated>
 									</custom>
 							</case>
@@ -1308,182 +3095,466 @@ Must be tested in iPhone and iPad.</preconds>
 						<case>
 				<id>C652366</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; AT POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Austria (AT) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123 
+Must be tested in iPhone and iPad.
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot; (iPhone) or click on &quot;i&quot; (iPad).</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652367</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; AT POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Austria (AT) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123 
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # 02 8793 3042.</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.
+</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652368</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; AR POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Argentina (AR) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.
+
+</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member #...</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #..</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652369</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; AR POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Argentina (AR) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #...</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652370</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; VN POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Vietnam (VN) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ....</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #..</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652371</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; VN POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Vietnam (VN) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.
+</content><expected>Info page will open.
+</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #..</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652372</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; ID POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select India (ID) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.
+</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.
+</content><expected>You should see a Gold member Phone #...</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652373</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; ID POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select India (ID) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ..</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #...</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652374</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; PH POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Philippines (PH) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.
+</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C652375</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; PH POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Philippines (PH) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.
+</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655512</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; AU POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Australia (AU) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655513</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; AU POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Australia (AU) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Silver member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655514</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; BE POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Belgium (BE) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655515</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; BE POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Belgium (BE) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Silver member phone # ..</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655516</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; BR POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Brazil (BR) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655517</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; BR POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Brazil (BR) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silverd@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...
+</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Silver banner for Silver member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655518</id>
 				<title>Hotel Loyalty members &gt; Gold member &gt; CA POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Canada (CA) POS and Sign In into the Gold ACC. 
+Please use: opd_rewards_gold@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655519</id>
 				<title>Hotel Loyalty members &gt; Silver member &gt; CA POS</title>
-												<type>Other</type>
+												<type>Manual</type>
 																<priority>2 - Must Test</priority>
 												
-				<estimate></estimate>
+				<estimate>600</estimate>
 																																<references></references> 
-															</case>
+																<custom>
+										<preconds>Select Canada (CA) POS and Sign In into the Silver ACC. 
+Please use: opd_rewards_silver@yahoo.com / test123</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open EB App and click on &quot;Settings&quot;.</content><expected>Info page will open.</expected></step>
+<step>
+<index>2</index><content>Click on &quot;Booking Support&quot;.</content><expected>Pop Up window will open. Make sure that you have Gold member phone # ...</expected></step>
+<step>
+<index>3</index><content>On the Launch screen click on the Hotels and Search for any hotel, any city, any days.</content><expected>Search Hotels page open.</expected></step>
+<step>
+<index>4</index><content>Select any Hotel from the list and go to Checkout.</content><expected>Checkout page will open and you should see a user Signed In and a Gold banner for Gold member.</expected></step>
+<step>
+<index>5</index><content>Book Hotel and open &quot;Your Trips&quot;. Expand any Itinerary card on Your Tips page.</content><expected>You should see a Gold member Phone #.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
 												
 						<case>
 				<id>C655520</id>
@@ -1886,7 +3957,514 @@ Must be tested in iPhone and iPad.</preconds>
 															</case>
 								</cases>
 							</section>
+			<section>
+		<name>POS specific</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C684004</id>
+				<title>Verify zip code required for guest hotel bookings in CA</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<steps>https://eiwork.mingle.thoughtworks.com/projects/eb_tp/cards/308</steps>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C684005</id>
+				<title>Verify zip code required for guest hotel bookings in UK</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+												
+						<case>
+				<id>C684006</id>
+				<title>Verify zip code required for guest hotel bookings in US</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+															</case>
+								</cases>
+							</section>
 	</sections>
 			</section>
+			<section>
+		<name>Itineraries</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Itineraries Local Notifications</name>
+		<description>Local notifications are derived from the device date and time plus the event start and end dates.  These are not server-driven, as flight or Leanplum push notifications are.</description>
+						
+		<cases>
+									
+						<case>
+				<id>C676554</id>
+				<title>Itineraries &gt; Verify Car local notification fires when car can be picked up</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have made a rental car booking as a guest or as a logged in user.  Car rental itinerary must be present on the device in the itineraries screen.</preconds>
+										<steps>1. Given I have a car rental, when the pickup time starts
+2. If I dismiss the notification from inside or outside the EB app
+3. If I tap [view] from inside or outside the app</steps>
+										<expected>1. I will receive a notification that reads “You can now pick up your car from Enterprise.”
+2. The notification goes away
+3. I am taken to the itineraries screen and the relevant car itinerary card expands to allow me to view the details</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C676555</id>
+				<title>Itineraries &gt; Verify Car local notification fires 2 hours prior to the drop-off time</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have made a rental car booking as a guest or as a logged in user. Car rental itinerary must be present on the device in the itineraries screen.
+</preconds>
+										<steps>1. Given I have a car rental, when it is 2 hours prior to the return time 
+2. If I dismiss the notification inside or outside the Expedia app
+3. If I tap [view] on the notification</steps>
+										<expected>1. I receive a notification that reads “Your Enterprise rental car is due to be returned in two hours.”
+2. The notification dismisses
+3. I am taken to the EB app, itineraries screen and the relevant car booking card expands so I can view the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C676556</id>
+				<title>Itineraries &gt; Verify Hotel local notification fires at 10am on check-in day</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a hotel either as a guest or as a logged-in user, itinerary must be on the device in the trips screen.</preconds>
+										<steps>1. Given I have a hotel booking, when it is 10 AM on the check-in day (10am device time) 
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I receive receive a notification that reads “Check in at &lt;hotel name&gt; begins at &lt;check-in time&gt; today.” (ex: “Check in at The Hyatt Regency Bellevue begins at 3PM today.”)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Hotel card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C676557</id>
+				<title>Itineraries &gt; Verify Hotel local notification fires at 10am on check-out day</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a hotel either as a guest or as a logged-in user, itinerary must be on the device in the trips screen.</preconds>
+										<steps>1. Given I have a hotel booking, when it is 10 AM on the check-out day (10am device time)
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Check out at &lt;hotel name&gt; is at &lt;check-out time&gt; today.” (ex: “Check out at The Hyatt Regency Bellevue is at 11AM today.”)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Hotel card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C676558</id>
+				<title>Itineraries &gt; Verify Activity local notification fires at 12pm on the day prior to the validity start date</title>
+												<type>Other</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked an activity either as a guest or as a logged-in user, itinerary must be on the device in the trips screen.</preconds>
+										<steps>1. Given I have an activity booking, when it is 12pm (device time) on the day prior to the activity
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your &lt;activity name&gt; can be redeemed starting tomorrow.” (ex: “Your Universal Studios ticket can be redeemed starting tomorrow.”)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Activity card which expands so I can see the details.
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C676559</id>
+				<title>Itineraries &gt; Verify Flight local notification fires when I can check in for my flight or 24 hours before departure</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.
+
+Carrier Name;	     Carrier Code;	Check-in Time (in hours)
+Air Canada;	     AC;	        24
+Air China;	     CA;	        12
+Air France;	     AF;                30
+Air India;	     AI;                36
+airberlin;	     AB;                30
+AirTran;             FL;                24
+Alaska Airlines;     AS;                24
+Alitalia;	     AZ;                20
+Allegiant;	     G4;                24
+American Airlines;   AA;                24
+Austrian;	     OS;                24
+Brussels Airlines;   SN;                24
+Cathay Pacific;	     CX;                24
+China Airlines;	     CI;                24
+China Southern;	     CZ;                24
+Czech Airlines;	     OK;                24
+Delta;	             DL;                24
+EL AL;	             LY;                24
+Emirates;	     EK;                24
+Etihad;	             EY;                20
+EVA Air;             BR;                24
+Finnair;             AY;        	36
+Frontier;	     F9;                24
+Germanwings;	     4U;                24
+go!;	             YV;                24
+Hawaiian Airlines;   HA;                24
+Iberia;	             IB;        	24
+Icelandair;	     FI;        	36
+Indigo Airlines;     6E;        	48
+Island Air;	     WP;                24
+JAL;	             JL;        	24
+Jet Airways;         9W;         	48
+JetBlue;             B6;        	24
+Jetstar;             JQ;        	24
+Kenya Airways;       KQ;        	30
+LAN Airlines;	     LA;        	48
+LOT Polish Airlines; LO;        	23
+Lufthansa;	     LH;        	23
+Oman Air;	     WY;        	24
+OpenSkies;	     EC;        	24
+Porter;	             PD;        	24
+Qantas;	             QF;        	24
+Qatar Airways;	     QR;         	36
+Regional Express;    ZL;        	48
+Royal Brunei;	     BI;        	24
+SAS;	             SK;        	22
+Singapore Airlines;  SQ;        	48
+South African Airways;SA;        	24
+Southwest;	     WN;        	24
+SpiceJet;	     SG;        	24
+Spirit;	             NK;        	24
+Sun Country;	     SY;        	24
+TAM;	             JJ;        	24
+TAP Portugal;	     TP;        	24
+TUIfly;	             X3;        	30
+Turkish Airlines;    TK;         	24
+United;	             UA;        	24
+US Airways;	     US;        	24
+Virgin America;	     VX;        	24
+Virgin Atlantic;     VS;        	24
+Virgin Australia;    DJ;        	24
+WestJet;             WS;         	24</preconds>
+										<steps>1. Given I have booked a flight with one of the airlines in the preconditions field above, when it is X hours (X is defined by each airline, typically 24 hours) prior to my flight 
+2. Given I have booked a flight with one of the airlines which is NOT in the preconditions above, when it is 24 hours before the flight departs
+3. If I dismiss the notification from inside or outside the Expedia app
+4. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “You can now check in for your &lt;carrier name&gt; flight to Chicago.” (ex: “You can now check in for your Virgin America flight to Chicago.”)
+2. I should receive a notification that reads “Your &lt;carrier name&gt; flight to Chicago departs in 24 hours.” (ex: “Your Virgin America flight to Chicago departs in 24 hours.”)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Itineraries Push Notifications</name>
+		<description>Flight push notifications require the device to have registered with our push server for a push token and the user has granted us the right to send them.  User must either log into an account which has flights or ingest a shared flight itinerary.  To check whether device has a push token, go to EB app-&gt; Settings -&gt; App Support -&gt; Email - the email generated will contain the push token status and string.</description>
+						
+		<cases>
+									
+						<case>
+				<id>C676567</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires when flight is 2 hours from departure</title>
+												<type>Manual</type>
+																<priority>1 - Must Test</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen, device must be registered for a push token with the push server.  Production flights are more reliable sources of push notifications as they do not get auto-cancelled.  Push can be tested with alpha/beta or releasebeta build.  To check whether device is registered with an alpha or beta build, insert your own push token into this URL: 
+ewetest-int.flightalerts.mobiata.com/lookup_registration/apns/ExpediaBookingsBeta/&lt;pushtoken&gt;?auth=7Y9pygPntMKAiXK
+ex:
+ewetest-int.flightalerts.mobiata.com/lookup_registration/apns/ExpediaBookingsBeta/39c7fcd6fe91ee2e16f0be6ba54d8028ebb89359e1dbb689cc15b4ce5cdaa500?auth=7Y9pygPntMKAiXK</preconds>
+										<steps>1. Given I have a flight itinerary in progress, when it is 2 hours before my flight departs 
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app
+</steps>
+										<expected>1. I should receive a notification which reads &quot;Your flight to &lt;destination name&gt; departs in 2 hours&quot; (ex: &quot;Your flight to Chicago departs in 2 hours&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677742</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires when flight has a gate change</title>
+												<type>Manual</type>
+																<priority>1 - Must Test</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.
+</preconds>
+										<steps>1. Given I have a flight in progress, if there is a gate change when the flight becomes active
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your flight to &lt;destination city&gt; now departs from &lt;gate id&gt;&quot; (ex: &quot;Your flight to San Francisco now departs from gate 56&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677743</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires when flight has a departure time change</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.</preconds>
+										<steps>1. Given I have a flight in progress, if there is a departure time change when the flight becomes active
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your flight to &lt;destination city&gt; is delayed &lt;X minutes/hours&gt;&quot; (ex: &quot;Your flight to San Francisco is delayed 25m&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677744</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires when flight has a gate and departure time change</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.</preconds>
+										<steps>1. Given I have a flight in progress, if there is a departure time change and gate change when the flight becomes active
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your flight to &lt;destination city&gt; will depart at &lt;time&gt; from &lt;gate id&gt;&quot; (ex: &quot;Your flight to San Francisco will depart at 2:50pm from Gate B2&quot;) 
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677745</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires when the flight has been canceled</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.
+</preconds>
+										<steps>1. Given I have a flight in progress, if the flight has been cancelled
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your flight to &lt;destination city&gt; is canceled&quot; (ex: &quot;Your flight to San Francisco is canceled&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677746</id>
+				<title>Itineraries &gt; Verify native itinerary Flight push notification fires for baggage claim info</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>User must have booked a flight either as a guest or as a logged-in user, itinerary must be loaded on the device in the trips screen.
+There is currently a bug in this feature (as of 6.5), which will display the push as &quot;Your bags will be at baggage claim .&quot;</preconds>
+										<steps>1. Given I have a flight in progress, if we receive baggage claim data from the feed
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Your bags will be at baggage claim &lt;carousel id&gt;&quot; (ex: &quot;Your bags will be at baggage claim 13&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677747</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires when flight has a departure time change</title>
+												<type>Other</type>
+																<priority>2 - Must Test</priority>
+												
+				<estimate></estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.</preconds>
+										<steps>1. Given I have a shared flight in progress, if there is a departure time change when the flight becomes active
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “&lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; will depart at &lt;time&gt; (&lt;offset&gt;)&quot; (ex: &quot;VX491 from San Francisco to Los Angeles will depart at 2:40pm (30m late)&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677748</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires when flight has a gate change</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress, if there is an arrival gate change when the flight becomes active
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “&lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; will arrive at &lt;gate id&gt;&quot; (ex: &quot;VX491 from San Francisco to Los Angeles will arrive at Gate B2&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677784</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires for gate departure time</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “&lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; will depart at &lt;time&gt; from &lt;gate id&gt;&quot; (ex: &quot;VX491 from San Francisco to Los Angeles will depart at 2:40pm from gate 10&quot;)
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677790</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires when flight takes off</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress, when the flight takes off
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Wheels up! &lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; took off at &lt;time&gt; (&lt;offset if any&gt;)&quot; (ex: &quot;VX491 from San Francisco to Los Angeles took off at 2:40pm (30m late)&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677802</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires with landing time and gate</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress, after the flight departs 
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “&lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; left &lt;gate id&gt; at &lt;time&gt; and will reach &lt;gate id&gt; at &lt;time&gt; (&lt;offset if any&gt;)&quot; (ex: &quot;VX491 from San Francisco to Los Angeles left gate 9 at 7:37pm (3m early) amd will reach gate 77a at 2:40pm (30m late)&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677807</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires when flight lands</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress, when the flight has landed
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Wheels down! &lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; landed at &lt;time&gt; (&lt;offset&gt;)&quot; (ex: &quot;VX491 from San Francisco to Los Angeles landed at 2:40pm (30m late)&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C677808</id>
+				<title>Itineraries &gt; Verify shared itinerary Flight push notification fires when there is an arrival gate change</title>
+												<type>Manual</type>
+																<priority>3 - Test If Time</priority>
+												
+				<estimate>1800</estimate>
+																																<references></references> 
+																<custom>
+										<preconds>App must have ingested a shared Flight itinerary which is active.
+</preconds>
+										<steps>1. Given I have a shared flight in progress, if the arrival gate has changed
+2. If I dismiss the notification from inside or outside the Expedia app
+3. If I tap [view] on the notification from inside or outside the Expedia app</steps>
+										<expected>1. I should receive a notification that reads “Wheels down! &lt;Flight id&gt; from &lt;origin city&gt; to &lt;destination city&gt; will arrive at &lt;gate id&gt;&quot; (ex: &quot;VX491 from San Francisco to Los Angeles will arrive at gate B10&quot;
+2. The notification dismisses
+3. I am taken into the Itineraries screen to the relevant Flight card which expands so I can see the details.</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Flights</name>
+		<description></description>
+									</section>
 	</sections>
 </suite>
